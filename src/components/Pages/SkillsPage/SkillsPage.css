@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.moto{
+    text-align: center;
+    font-family: cursive;
+    margin: 1rem;
+}
+
+.heading{
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.skill {
+    height: 11vh;
+    width: 43vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.25rem;
+    background: #D9CACA;
+    border-radius: 1.25rem;
+    color: black;
+}
+
+.box-skill:hover *{
+    background: rgb(161, 133, 133);
+    color: white;
+    cursor: pointer;
+}
+
+.container-skills{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box-skill{
+    height: 12vh;
+    width: 45vw;
+    margin: 4px;
+    /* background: wheat; */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    --angle: 0deg;
+    animation: rotate 3.5s linear none infinite;
+
+    /* border-radius: 1.5rem; */
+}
+/* 
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0;
+    inherits: false;
+} */
+
+.box-skill::after, .box-skill::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    /* background-image: conic-gradient(from var(--angle,0deg), red, yellow, blue, green, pink, purple, red); */
+    background-image: conic-gradient(from 0deg, #1b0000, #5c0000, #8b0000, #a40000, #1b0000);
+    border-radius: 1.5rem;
+    z-index: -1;
+}
+
+.box-skill::before{
+    filter: blur(1.5rem);
+    opacity: 0.4;
+}
+
+@keyframes rotate {
+    from{
+        --angle: 0deg;
+    }
+    to{
+       --angle: 360deg;
+    }
+}
+
+@media (max-width: 640px) {
+    
+}
+
+@media(min-width: 641px) and (max-width: 1024px){
+    .moto{
+        text-align: center;
+        font-family: cursive;
+        font-size: 2rem;
+    }
+    .heading{
+        font-size: 2.5rem;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    .container-skills{
+        height: auto;
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .box-skill{
+        height: 35%;
+        width: 30%;
+    }
+    .skill{
+        height: 90%;
+        width: 96%;
+        margin: 3px;
+    }
+}
+
+@media(min-width: 1025px) and (max-width: 2561px){
+    .moto{
+        text-align: center;
+        font-family: cursive;
+        font-size: 1.5rem;
+        margin: 2rem;
+    }
+    .heading{
+        font-size: 2.5rem;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    .container-skills{
+        height: auto;
+        width: 97%;
+        margin: auto;
+        padding: 1rem;
+        color: white;
+    }
+    .box-skill{
+        height: 23vh;
+        width: 21vw;
+        border-radius: 1.5rem;
+    }
+    .skill{
+        height: 93%;
+        width: 96%;
+        border-radius: 1.5rem;
+        margin: 2px;
+    }
+}

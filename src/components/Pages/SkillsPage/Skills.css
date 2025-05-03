@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.moto {
+    text-align: center;
+    font-family: cursive;
+}
+
+.heading {
+    text-align: center;
+}
+
+.skill {
+    height: 11vh;
+    width: 43vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.25rem;
+    background: black;
+    border-radius: 1.25rem;
+    color: white;
+}
+
+.container-skills {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box-skill {
+    height: 12vh;
+    width: 45vw;
+    margin: 4px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: rotate 3.5s linear infinite;
+}
+
+.box-skill::after, .box-skill::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-image: conic-gradient(red, yellow, blue, green, pink, purple, red);
+    border-radius: 1.5rem;
+    z-index: -1;
+}
+
+.box-skill::before {
+    filter: blur(1.5rem);
+    opacity: 0.4;
+}
+
+@keyframes rotate {
+    0% {
+        background-image: conic-gradient(red, yellow, blue, green, pink, purple, red);
+    }
+    100% {
+        background-image: conic-gradient(360deg, red, yellow, blue, green, pink, purple, red);
+    }
+}

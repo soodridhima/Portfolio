@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.moto{
+    text-align: center;
+    font-family: cursive;
+    margin-top: 1.5rem;
+}
+
+.heading{
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.proj{
+    height: 11vh;
+    width: 43vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.25rem;
+    background: black;
+    border-radius: 1.25rem;
+}
+
+.container-projs{
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    width: 98%;
+}
+
+.box-proj{
+    height: 40vh;
+    width: 98vw;
+    margin: 4px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    --angle: 0deg;
+    animation: rotate 3.5s linear none infinite;
+}
+
+.proj{
+    height: 96%;
+    width: 96%;
+}
+
+.box-proj::after, .box-proj::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-image: conic-gradient(
+        red 0deg 90deg,
+        transparent 90deg 180deg,
+        blue 180deg 270deg,
+        transparent 270deg 360deg
+      );
+          border-radius: 1.5rem;
+    z-index: -1;
+}
+
+.box-proj::before{
+    filter: blur(1.5rem);
+    opacity: 0.9;
+}
+
+@keyframes rotate {
+    from{
+        --angle: 0deg;
+    }
+    to{
+       --angle: 360deg;
+    }
+}
+
+@media (max-width: 640px) {
+}
+
+@media(min-width: 641px) and (max-width: 1024px){
+    .moto{
+        text-align: center;
+        font-family: cursive;
+        font-size: 2rem;
+    }
+    .heading{
+        font-size: 2.5rem;
+        font-family: cursive;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .container-projs{
+        height: auto;
+        width: 98%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .box-proj{
+        height: 45vh;
+        width: 32%;
+    }
+    .proj{
+        height: 96%;
+        width: 96%;
+        margin: 3px;
+    }
+}
+
+@media(min-width: 1025px) and (max-width: 2561px){
+    .moto{
+        text-align: center;
+        font-family: cursive;
+        font-size: 1.5rem;
+        margin: 2rem;
+    }
+    .heading{
+        font-size: 2.5rem;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    .container-projs{
+        height: auto;
+        width: 98%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    .box-proj{
+        height: 50vh;
+        width: 29vw;
+        border-radius: 1.5rem;
+    }
+    .proj{
+        height: 93%;
+        width: 96%;
+        border-radius: 1.5rem;
+        margin: 2px;
+    }
+}
